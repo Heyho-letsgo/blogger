@@ -3,3 +3,15 @@
 			<h2><%= @article.title%> </h2> 
 			<p><%= @article.body %> </p>
 <%= link_to "<< Retour", articles_path %>
+
+<!-- Cette inclusion ruby es la façon unique 
+de supprimer une fiche c'est method: :delete
+Cette methode doit retrouver dans le controler concerné
+l'action def destroy 
+
+--> 
+<%= link_to "Supprime", 
+		@article,
+			method: :delete,
+			data: {confirm: "Voulez vous vraiment supprimer cet article?", confirm: "T'es sur?"}
+%>
